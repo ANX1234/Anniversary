@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anniversary Website ❤️</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(to bottom right, #ffd6e0, #fff5f7);
+        color: #5a2a2a;
+        text-align: center;
+    }
+
+    /* Navbar */
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(255,255,255,0.9);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; }
+    .navbar a { text-decoration: none; color: #5a2a2a; font-weight: bold; padding: 5px 10px; }
+    .navbar a:hover { color: #d6336c; }
+
+    /* Dropdown */
+    .navbar li.dropdown { position: relative; }
+    .navbar li.dropdown .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;       /* below the menu item */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        min-width: 150px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        border-radius: 5px;
+        overflow: hidden;
+        z-index: 10;
+    }
+    .navbar li.dropdown .dropdown-content a {
+        display: block;
+        padding: 10px;
+        color: #5a2a2a;
+        text-align: left;
+    }
+    .navbar li.dropdown .dropdown-content a:hover {
+        background-color: #ffd6e0;
+        color: #d6336c;
+    }
+    .navbar li.dropdown:hover .dropdown-content { display: block; }
+
+    /* Sections */
+    .section { display: none; padding-top: 80px; }
+    .active { display: block; }
+
+    h1 { color: #d6336c; }
+    p { max-width: 600px; margin: auto; font-size: 1.2em; }
+
+    /* Slideshow */
+    .slideshow-container { max-width: 900px; margin: 20px auto; position: relative; }
+    .slide { display: none; }
+    .slide img { width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        padding: 12px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 5px;
+        transform: translateY(-50%);
+    }
+    .prev { left: 0; } .next { right: 0; }
+    .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+    /* Hearts */
+    .hearts { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; z-index: 0; }
+    .heart { position: absolute; color: rgba(255, 0, 102, 0.6); font-size: 20px; animation: float 6s linear infinite; }
+    @keyframes float { 0% { transform: translateY(100vh) scale(1); opacity:1; } 100% { transform: translateY(-10vh) scale(1.5); opacity:0; } }
+
+    /* About Us */
+    #about-us { max-width: 800px; margin: 50px auto; text-align: left; background-color: #fff0f5; padding: 30px; border-radius: 15px; }
+    #about-us img { width:100%; border-radius:10px; margin-top:20px; }
+</style>
+</head>
+<body>
+
+<!-- Hearts -->
+<div class="hearts" id="hearts"></div>
+
+<!-- Navbar -->
+<nav class="navbar">
+<ul>
+    <li><a href="#" onclick="showSection('home')">Home</a></li>
+    <li class="dropdown">
+        <a href="#">Memories ▼</a>
+        <div class="dropdown-content">
+            <a href="#" onclick="showMemory('place1')">Place 1</a>
+            <a href="#" onclick="showMemory('place2')">Place 2</a>
+            <a href="#" onclick="showMemory('place3')">Place 3</a>
+        </div>
+    </li>
+    <li><a href="#" onclick="showSection('about-us')">About Us</a></li>
+</ul>
+</nav>
+
+<!-- HOME SECTION -->
+<div id="home" class="section active">
+    <header>
+        <h1>Happy Anniversary ❤️</h1>
+        <p>My love, every moment with you is magical. You make my days brighter, my heart warmer, and my life better.</p>
+    </header>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011367.jpg" alt="Memory 1">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011510.jpg" alt="Memory 2">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011581.jpg" alt="Memory 3">
+    </div>
+    
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011595.jpg" alt="Memory 4">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011628.jpg" alt="Memory 5">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011652.jpg" alt="Memory 6">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011662.jpg" alt="Memory 7">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011680.jpg" alt="Memory 8">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011695.jpg" alt="Memory 9">
+    </div>
+
+        <a class="prev" onclick="changeSlide(-1)">❮</a>
+        <a class="next" onclick="changeSlide(1)">❯</a>
+
+    </div>
+</div>
+
+<!-- ABOUT US SECTION -->
+<div id="about-us" class="section">
+    <h1>Hello, here’s our story...</h1>
+    <p>Our story began in 2019 in the serene city of Dehradun. I still remember the moment she approached me—it was simple, yet it changed my life forever. She brought a light into my world that I didn’t know I needed, and in her presence, everything felt brighter, warmer, and more alive. I almost fell in love with her then, but the thought of a long-distance relationship scared me, and I held back.</p>
+
+<p>In 2020, life took us on different paths. We stayed in touch occasionally, exchanging messages and memories, but the distance grew—not just physically, but emotionally. During this time, she found a partner, moving forward with her life, while I was still uncertain of my feelings and hesitant to fully open my heart. It was a time of reflection for both of us, yet something always drew me back to her.</p>
+
+<p>In 2021, we began talking again. There were small breaks and moments of silence, but slowly, our connection grew stronger. Each conversation, each laugh, each shared thought reminded me of what I had almost lost, and I realized my heart had never truly let go.</p>
+
+<p>By 2022, our bond deepened in ways I hadn’t imagined. My heart melted for her completely, and I knew I didn’t want to hold back any longer. There was a brief miscommunication that almost drove us apart, but destiny had other plans. When we met again in Dehradun, everything felt right—the place, the moment, and most importantly, each other. That day, 16th August 2022, became a milestone in our lives as we officially began our relationship. From that moment, happiness became our companion, and love became our language.</p>
+
+<p>Now, in 2025, I have been living in Canada since January, experiencing the challenge of long-distance love for the first time in months. Being away from her is difficult, and sometimes the distance feels overwhelming. Yet, every day, I hold onto the memories we’ve built, the laughter we’ve shared, and the bond that has grown stronger through time and trials. I trust that our love will endure, and I hope that, despite the miles, she will remain mine forever. The distance may test us, but it will never break what we have—it will only make our reunion even sweeter.</p>
+    <img src="images/about_photo.jpg" alt="Us Together">
+</div>
+
+<!-- Footer -->
+<footer style="padding:20px; color:#a05252;">Made with love for you 💖</footer>
+
+<!-- Music -->
+<audio id="bgMusic" autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    // Hearts animation
+    const heartsContainer = document.getElementById('hearts');
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random()*100 + 'vw';
+        heart.style.animationDuration = (3 + Math.random()*3)+'s';
+        heart.style.fontSize = (15 + Math.random()*25)+'px';
+        heartsContainer.appendChild(heart);
+        setTimeout(()=>heart.remove(),6000);
+    }
+    setInterval(createHeart,300);
+
+    // Slideshow
+    let slideIndex=0;
+    let slides = document.getElementsByClassName("slide");
+    function showSlide(n){
+        if(n>=slides.length) slideIndex=0;
+        if(n<0) slideIndex=slides.length-1;
+        for(let i=0;i<slides.length;i++){ slides[i].style.display="none"; }
+        slides[slideIndex].style.display="block";
+    }
+    function changeSlide(n){ showSlide(slideIndex+=n); }
+    function autoPlaySlides(){ changeSlide(1); setTimeout(autoPlaySlides,4000); }
+    showSlide(slideIndex);
+    autoPlaySlides();
+
+    // Memories dropdown
+    function showMemory(placeClass){
+        slides=document.getElementsByClassName("slide");
+        slideIndex=0;
+        for(let i=0;i<slides.length;i++){
+            slides[i].style.display=slides[i].classList.contains(placeClass)?"block":"none";
+        }
+    }
+
+    // Sections toggle
+    function showSection(id){
+        const sections=document.getElementsByClassName("section");
+        for(let i=0;i<sections.length;i++){
+            sections[i].classList.remove("active");
+        }
+        document.getElementById(id).classList.add("active");
+    }
+
+    // Autoplay music
+    const music = document.getElementById("bgMusic");
+    document.addEventListener("DOMContentLoaded",()=>{
+        let playPromise = music.play();
+        if(playPromise!==undefined){
+            playPromise.catch(()=>{ document.body.addEventListener("click",()=>music.play(),{once:true}); });
+        }
+    });
+</script>
+
+</body>
+</html>
