@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary ❤️</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff0f5;
+    overflow-x: hidden;
+}
+
+/* Floating hearts animation */
+@keyframes float {
+    0% { transform: translateY(0vh) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+}
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 60px;
+    animation: float 6s linear infinite;
+    color: #ff4d6d;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #d6336c;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.navbar li {
+    position: relative;
+}
+.navbar a {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.navbar a:hover {
+    background-color: #a1224d;
+}
+
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d6336c;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #a1224d;
+}
+.navbar li:hover .dropdown-content {
+    display: block;
+}
+
+/* Sections */
+.section {
+    display: none;
+    padding: 20px;
+}
+.section.active {
+    display: block;
+}
+
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    z-index: 2;
+}
+.slide {
+    display: none;
+}
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+.prev { left: 0; }
+.next { right: 0; }
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bg-music">
+    <source src="C:\Users\remod\OneDrive\Desktop\website\song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Floating Hearts Script -->
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+    heart.innerHTML = "❤️";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 7000);
+}
+setInterval(createHeart, 500);
+</script>
+
+<!-- Navbar -->
+<div class="navbar">
+    <ul>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li>
+            <a href="#">Memories ▼</a>
+            <div class="dropdown-content">
+                <a href="#" onclick="showSection('place1')">Chandigarh</a>
+                <a href="#" onclick="showSection('place2')">Rishikesh</a>
+                <a href="#" onclick="showSection('place3')">Dehradun</a>
+                <a href="#" onclick="showSection('place4')">More </a>
+                <a href="#" onclick="showSection('place5')">My Favorites</a>
+            </div>
+        </li>
+        <li><a href="#" onclick="showSection('about')">About Us</a></li>
+    </ul>
+</div>
+
+<!-- Home Section -->
+<div id="home" class="section active">
+    <h1>Happy Anniversary ❤️</h1>
+    <p class="lead">My love, every moment with you is magical. You make my days brighter, my heart warmer, and my life better.</p>
+
+    <div class="slideshow-container">
+        <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011367.jpg" alt="Memory 1">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011510.jpg" alt="Memory 2">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011581.jpg" alt="Memory 3">
+    </div>
+    
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011595.jpg" alt="Memory 4">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011628.jpg" alt="Memory 5">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011652.jpg" alt="Memory 6">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011662.jpg" alt="Memory 7">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011680.jpg" alt="Memory 8">
+    </div>
+
+    <div class="slide fade">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011695.jpg" alt="Memory 9">
+    </div>
+
+        <a class="prev" onclick="changeSlide(-1)">❮</a>
+        <a class="next" onclick="changeSlide(1)">❯</a>
+    </div>
+</div>
+
+<!-- Memories: place1 -->
+<div id="place1" class="section">
+    <h1>Chandigarh Diaries</h1>
+    <div class="gallery">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011166.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011717.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011168.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011769.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011790.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011810.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011821.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011827.jpg">
+    </div>
+</div>
+
+<!-- Memories: place2 -->
+<div id="place2" class="section">
+    <h1>Rishikesh Diaries</h1>
+    <div class="gallery">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011737.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011275.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011286.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011301.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011303.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011330.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011562.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011570.jpg">
+    </div>
+</div>
+
+<!-- Memories: place3 -->
+<div id="place3" class="section">
+    <h1>Dehradun Diaries</h1>
+    <div class="gallery">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011239.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011250.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011615.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011478.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011504.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011572.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011600.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000034412.jpg">
+    </div>
+</div>
+
+<!-- Memories: place4 -->
+<div id="place4" class="section">
+    <h1>Some More...</h1>
+    <div class="gallery">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011213.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000016733.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000014084.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000012483.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000016732.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000027190.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000031446.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000012458.jpg">
+    </div>
+</div>
+
+<!-- Memories: place5 -->
+<div id="place5" class="section">
+    <h1>My Favorites</h1>
+    <div class="gallery">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011577.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011604.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011613.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011641.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011668.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011673.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011681.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011700.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011704.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011736.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000031497.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000039481.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011216.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011226.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011337.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011370.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011375.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011384.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011495.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011508.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011511.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011523.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011526.jpg">
+        <img src="C:\Users\remod\OneDrive\Desktop\website\1000011546.jpg">
+    </div>
+</div>
+
+<!-- About Us -->
+<div id="about" class="section">
+    <h1>Hello, here’s our story...</h1>
+    <p><i>Some moments in life are quiet, yet they change everything.</i></p>
+<p>Our story began in 2019, in the peaceful, sun-kissed streets of Dehradun. I still remember the way she walked into my life—unplanned, unexpected, and yet so perfectly timed. She approached me with a smile that carried the warmth of a thousand sunrises. In that moment, something inside me shifted. She brought a light into my world I didn’t even know I was missing, and suddenly, life felt brighter, softer, and more alive. I almost surrendered my heart to her then, but fear whispered in my ear—the fear of loving and losing, the fear of distance. And so, I held back.</p>
+
+<p><i>Some distances are measured in miles. Others in missed chances.</i></p>
+
+<p>In 2020, life took us on different paths. We stayed in touch occasionally, exchanging messages and memories, but the distance grew—not just physically, but emotionally. During this time, she found a partner, moving forward with her life, while I was still uncertain of my feelings and hesitant to fully open my heart. It was a time of reflection for both of us, yet something always drew me back to her.</p>
+
+<p>In 2020, life carried us in different directions. We spoke sometimes, holding onto little fragments of what we had, but the spaces between our words grew wider. She found someone else, moving forward, while I stood still—uncertain, caught between longing and hesitation. And yet, even in the silence, something inside me still called her name.</p>
+
+<p><i>Some threads cannot be cut. Not by time, not by distance, not by anyone.</i></p>
+
+<p>Then came 2021. We found our way back into each other’s lives—slowly at first, carefully, as if afraid the spell might break. There were pauses, long silences, and moments of doubt. But each conversation, each laugh, each memory reminded me that my heart had never really let her go.</p>
+
+<p><i>And then there are moments when the heart finally decides—this is it.</i></p>
+
+<p>By 2022, I knew. I loved her. Completely, hopelessly, irreversibly. A small miscommunication nearly ended everything, but fate held us together. We met again in Dehradun, and when I saw her, the world seemed to fall back into place. The city, the air, the way she looked at me—it all felt like home. On 16th August 2022, we chose each other, officially. From that day on, love became our language, and happiness became the quiet rhythm of our lives.</p>
+
+<p><i>Some loves don’t just survive—they bloom through every season.</i></p>
+
+<p>Now, it’s 2025. I’ve been in Canada since January. Eight months. Eight months of learning what it truly means to love from oceans away. The distance is hard—harder than I ever imagined. There are nights I close my eyes and pretend she’s beside me, mornings I ache for her smile to be the first thing I see. But even in the quiet, even in the loneliness, she is here—with me, in me. In her laughter I carry in my mind. In her voice that lingers in my heart.</p>
+
+<p><i>Some stories are not about how close you are, but about how strong you stay.</i></p>
+
+<p>This distance has tested us, but it has also proven something unshakable—that love is not measured by the miles between us, but by the depth of what we hold inside. And what we have is unbreakable.</p>
+<p>I dream of the day when the distance will be nothing more than a memory. When I can hold her again without counting the days. And when that day comes, our reunion will be more than sweet—it will be the moment when my heart finally comes home</p>
+
+    <!-- Optional photo -->
+    <img src="C:\Users\remod\OneDrive\Desktop\website\1000011554.jpg">
+</div>
+
+<script>
+/* Slideshow */
+let slideIndex = 1;
+showSlide(slideIndex);
+let autoSlideInterval = setInterval(() => changeSlide(1), 3000);
+
+function changeSlide(n) {
+    clearInterval(autoSlideInterval);
+    showSlide(slideIndex += n);
+    autoSlideInterval = setInterval(() => changeSlide(1), 3000);
+}
+
+function showSlide(n) {
+    let slides = document.getElementsByClassName("slide");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (let slide of slides) {
+        slide.style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+}
+
+/* Section switching without stopping music */
+function showSection(id) {
+ // Show the section
+    document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+
+// Show corresponding footer
+    document.querySelectorAll(".footer").forEach(f => f.classList.remove("active"));
+    const footer = document.getElementById("footer-" + id);
+    if (footer) footer.classList.add("active");
+}
+</script>
+<script>
+const audio = document.getElementById("bg-music");
+
+function playMusic() {
+  audio.play().catch(() => console.log("User interaction required to play music"));
+  // Remove the listener after first click
+  document.removeEventListener("click", playMusic);
+}
+
+// Wait for first click anywhere
+document.addEventListener("click", playMusic);
+</script>
+
+<!-- Home Footer -->
+<footer id="footer-home" class="footer active">
+  Made with love ❤️
+</footer>
+
+<!-- Chandigarh Footer -->
+<footer id="footer-place1" class="footer">
+  These memories are my favorite chapters with you 💗
+</footer>
+
+<!-- Rishikesh Footer -->
+<footer id="footer-place2" class="footer">
+  These memories are my favorite chapters with you 💗
+</footer>
+
+<!-- Dehradun Footer -->
+<footer id="footer-place3" class="footer">
+  These memories are my favorite chapters with you 💗
+</footer>
+
+<!-- More Footer -->
+<footer id="footer-place4" class="footer">
+ These memories are my favorite chapters with you 💗
+</footer>
+
+<!-- My Favorites Footer -->
+<footer id="footer-place5" class="footer">
+  And many more....💗
+</footer>
+
+<!-- About Footer -->
+<footer id="footer-about" class="footer">
+  Forever & always 💞
+</footer>
+</body>
+</html>

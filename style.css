@@ -1,0 +1,135 @@
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd6e0, #fff5f7);
+  color: #5a2a2a;
+  text-align: center;
+}
+main { padding: 80px 16px 32px; } /* space for fixed navbar */
+
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+.navbar ul {
+  list-style: none; margin: 0; padding: 10px 12px;
+  display: flex; gap: 20px; justify-content: center; align-items: center;
+}
+.navbar li { position: relative; }
+.navbar a {
+  text-decoration: none; color: #5a2a2a; font-weight: 700;
+  padding: 8px 12px; border-radius: 10px;
+}
+.navbar a:hover { color: #d6336c; background: #ffe8ef; }
+
+/* Dropdown centered below the Memories item */
+.navbar li.dropdown { position: relative; }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;            /* directly below the parent li */
+  left: 50%;
+  transform: translateX(-50%); /* center align to the parent */
+  background: #ffffff;
+  min-width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+  z-index: 1001;
+}
+.dropdown-content a {
+  display: block; text-align: left; padding: 10px 14px; color: #5a2a2a;
+}
+.dropdown-content a:hover { background: #ffd6e0; color: #d6336c; }
+.navbar li.dropdown:hover .dropdown-content { display: block; }
+
+/* ===== Slideshow (Home) ===== */
+.slideshow-container {
+  position: relative; max-width: 900px; margin: 10px auto 0;
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  background: #fff;
+}
+.slide { display: none; }
+.slide img { width: 100%; display: block; }
+.nav-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.5); color: #fff; border: 0; cursor: pointer;
+  font-size: 22px; padding: 10px 14px; border-radius: 10px;
+  user-select: none;
+}
+.nav-btn:hover { background: rgba(0,0,0,0.8); }
+.prev { left: 10px; } .next { right: 10px; }
+
+.caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 100%);
+  color: #fff; padding: 14px; text-align: left; font-weight: 600;
+}
+
+/* ===== Hearts (Home) ===== */
+.hearts {
+  position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0;
+}
+.heart {
+  position: absolute; color: rgba(255, 0, 102, 0.65);
+  font-size: 18px; animation: float 6s linear infinite;
+}
+@keyframes float {
+  0% { transform: translateY(100vh) scale(1); opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+
+/* ===== Headings & text ===== */
+h1 { color: #d6336c; margin: 8px 0 12px; }
+.lead { max-width: 760px; margin: 0 auto 16px; font-size: 1.1rem; }
+
+/* ===== Memories page ===== */
+.filters {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 12px auto 20px;
+}
+.filter-btn {
+  background: #fff; border: 2px solid #ffd6e0; color: #d6336c; font-weight: 700;
+  padding: 8px 12px; border-radius: 999px; cursor: pointer;
+}
+.filter-btn.active, .filter-btn:hover { background: #ffd6e0; }
+
+.gallery {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  max-width: 1100px; margin: 0 auto;
+}
+.gallery img {
+  width: 100%; border-radius: 14px; display: block; background: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+.hidden { display: none !important; }
+
+/* ===== About page ===== */
+.about-card {
+  max-width: 900px; margin: 0 auto;
+  background: #fff0f5; padding: 24px; border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  text-align: left;
+}
+.about-card img { width: 100%; border-radius: 12px; margin-top: 14px; }
+
+/* ===== Footer ===== */
+.footer {
+  display: none;
+  text-align: center;
+  padding: 15px;
+  color: #a1224d;
+  background-color: #ffe8ef;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.footer.active {
+  display: block;
+}
